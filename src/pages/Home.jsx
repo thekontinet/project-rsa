@@ -2,14 +2,14 @@ import React from 'react'
 import Apply from '../components/Apply'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
-import Index from '../components/Index'
+import Hero from '../components/Hero'
 import Offer from '../components/Offer'
 import Testimonial from '../components/Testimonial'
 
 function Home() {
   return (
     <div className='h-screen w-screen overflow-x-hidden scroll-smooth'>
-        <Index/>
+        <Hero/>
         <Offer/>
         <Testimonial/>
         <Apply/>
