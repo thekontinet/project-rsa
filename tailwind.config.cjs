@@ -7,9 +7,13 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily:{
+      'alfa': ['Alfa Slab One']
+    },
     extend: {
       colors: {
-        primary: colors.blue
+        primary: colors.blue,
+        secondary: colors.orange
       }
     },
   },

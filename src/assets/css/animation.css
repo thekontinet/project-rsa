@@ -1,0 +1,30 @@
+@layer utilities{
+    .animate-breathing{
+        animation: breathing 1s infinite;
+    }
+    .animate-jumping{
+        animation: jumping 1s infinite;
+    }
+}
+
+@keyframes breathing{
+    0%, 100%{
+        transform: scale(1.05);
+        animation-timing-function: cubic-bezier(0.8,0,1,1);
+    }
+    50%{
+        transform: scale(1);
+        animation-timing-function: cubic-bezier(0,0,0.2,1);
+    }
+}
+
+@keyframes jumping{
+    0%, 100%{
+        transform: translateY(-5px);
+        animation-timing-function: ease-in-out;
+    }
+    50%{
+        transform: translateY(0);
+        animation-timing-function: ease-in-out;
+    }
+}
