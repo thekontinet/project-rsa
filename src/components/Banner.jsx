@@ -2,11 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import grid from "../assets/images/bg-grid.png";
+import TopNav from "./TopNav";
 
 function Banner() {
   return (
     <header className="relative">
-      <div className="h-screen w-full px-7 md:px-32 my-5">
+    <TopNav/>
+      <div className="w-full px-7 md:px-32 my-5 md:mt-14 mt-4">
         <div className="md:mt-8 mt-4">
           <Link to={"/"} className="flex">
             <img src={logo} />
