@@ -16,7 +16,7 @@ function Course({
   imageURL,
 }) {
   const levels = ["Beginners", "Intermediate", "Advanced"];
-  const statuses = {
+  const statusIcons = {
     open: <FaCheckCircle className="w-3 h-3" />,
     closed: <AiFillCloseCircle className="w-3 h-3" />,
   };
@@ -44,11 +44,12 @@ function Course({
               {
                 "bg-green-500": status === "open",
                 "bg-gray-500": status === "closed",
+                "bg-amber-500": !status,
               }
             )}
           >
-            {status?.toUpperCase() ?? date}
-            {statuses[status] ?? <FaClock className="w-3 h-3" />}
+            {status ? status?.toUpperCase() : date}
+            {statusIcons[status] ?? <FaClock className="w-3 h-3" />}
           </span>
           <span className="font-bold text-lg">{price}</span>
         </div>

@@ -19,12 +19,12 @@ function Offer() {
           experience under your belt.
         </p>
         <div>
-          <div className="grid md:grid-col-3 justify-center items-center gap-10">
+          <div className="grid md:grid-cols-3 justify-center items-center gap-10">
             <Course
               title="HTML & CSS"
               subtitle="8 Weeks"
               level={0}
-              status="closed"
+              date="Jan 1st 2023"
               price="$250.00"
               description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
           voluptatibus cumque, hic eligendi soluta commodi nobis? Ducimus nulla
