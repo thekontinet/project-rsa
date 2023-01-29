@@ -44,7 +44,7 @@ function Offer() {
               title="HTML & CSS"
               subtitle="8 Weeks"
               level={2}
-              status="open"
+              status="closed"
               price="$850.00"
               description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
           voluptatibus cumque, hic eligendi soluta commodi nobis? Ducimus nulla
