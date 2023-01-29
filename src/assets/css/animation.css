@@ -5,6 +5,12 @@
     .animate-jumping{
         animation: jumping 1s infinite;
     }
+    .animate-sliding-border-right{
+        animation: sliding-border-right 1s ease-in-out;
+    }
+    .animate-sliding-border-left{
+        animation: sliding-border-left 1s ease-in-out;
+    }
 }
 
 @keyframes breathing{
@@ -26,5 +32,26 @@
     50%{
         transform: translateY(0);
         animation-timing-function: ease-in-out;
+    }
+}
+
+@keyframes sliding-border-right {
+    0%{
+        opacity: 0;
+        right: -5px;
+    }
+    50% , 100%{
+        opacity: 1;
+        right: 0;
+    }
+}
+@keyframes sliding-border-left {
+    0%{
+        opacity: 0;
+        left: -5px;
+    }
+    50% , 100%{
+        opacity: 1;
+        left: 0;
     }
 }
