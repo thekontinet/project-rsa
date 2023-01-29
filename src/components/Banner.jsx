@@ -7,21 +7,15 @@ import TopNav from "./TopNav";
 function Banner() {
   return (
     <header className="relative">
-    <TopNav/>
-      <div className="w-full px-7 md:px-32 my-5 md:mt-14 mt-4">
-        <div className="md:mt-8 mt-4">
-          <Link to={"/"} className="flex">
-            <img src={logo} />
-            <span className="font-black text-sm text-slate-500">Tech</span>
-          </Link>
-        </div>
+      <TopNav />
+      <div className="w-full px-7 md:px-32 my-5">
         <div className="md:grid grid-cols-2 py-10">
           <div className="">
             <h3 className="uppercase  tracking-widest mb-4">
               <span className="text-sm font-medium rounded-full bg-primary-900 text-white py-1 px-2 mb-3 inline-block">
                 Start Your
               </span>
-              <span className="text-primary-500 md:text-8xl block font-black font-alfa">
+              <span className="text-primary-500 text-6xl md:text-8xl block font-black font-alfa">
                 Coding Journey
               </span>
               with our Comprehensive online professional training.
