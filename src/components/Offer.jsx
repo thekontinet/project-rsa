@@ -1,15 +1,36 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Arrow from "../assets/images/Arrow.png";
 import Course from "./Course.jsx";
+import { gsap, Power3 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-function Offer() {
+
+gsap.registerPlugin(ScrollTrigger);
+function Offer({id}) {
+  let subtitle = useRef(null)
+  
+  // useEffect(() => {
+  //    const ctx = gsap.context(() => {
+  //     const Ref = subtitle.current
+  //     gsap.from(Ref, {
+  //       opacity: 0,
+  //       y: -10,
+  //       skewX:-10,
+  //       duration: 1,
+  //       ease: Power3.easeInOut,
+  //       scrollTrigger: Ref
+  //        })
+  //    })
+
+  //    return () => ctx.revert()
+  // }, []);
   return (
     <section
-      id="offer"
+      ref={id}
       className="w-full relative bg-slate-50 px-7 py-20 md:px-16 text-center"
     >
-      <div className="relative z-10">
-        <h1 className="font-bold font-alfa text-primary-500 uppercase">
+      <div className="relative">
+        <h1 ref={el => subtitle = el} className="font-bold font-alfa text-primary-500 uppercase tracking-widest">
           what we offer
         </h1>
         <p className="max-w-3xl mb-8 text-sm mx-auto mt-5">

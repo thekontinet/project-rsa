@@ -1,21 +1,61 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import logo from "../assets/images/logo.png";
+import React, { useEffect, useRef } from "react";
 import grid from "../assets/images/bg-grid.png";
-import TopNav from "./TopNav";
+import { gsap, Power3, Power4 } from "gsap";
 
-function Banner() {
+
+function Banner({id}) {
+  let startRef = useRef(null);
+  let codeRef = useRef(null);
+  let descRef = useRef(null);
+  let imgRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(startRef, {
+        opacity:0,
+        y:10,
+        duration:1,
+        ease: Power3.inOut
+      })
+
+      gsap.from(codeRef, {
+        delay: 1,
+        opacity: 0,
+        x:30,
+        duration:1,
+        ease: 'elastic'      
+      });
+
+      gsap.from(descRef, {
+        delay:1.5,
+        opacity: 0,
+        y:10,
+        skewY:-10,
+        duration:1,
+        ease: Power4.easeInOut
+      });
+
+      gsap.from(imgRef, {
+        delay: 1,
+        opacity: 0,
+        y:-30,
+        duration:1,
+        ease: Power3.easeInOut
+      })
+    });
+
+    return () => ctx.revert()
+  }, [startRef, codeRef, descRef, imgRef])
   return (
-    <header className="relative">
-      <TopNav />
-      <div className="w-full px-7 md:px-32 my-5">
-        <div className="md:grid grid-cols-2 py-10">
+    <div ref={id} className="relative">
+      <div className="w-full px-7 md:px-32 py-5">
+        <div className="md:grid grid-cols-2">
           <div className="">
-            <h3 className="uppercase  tracking-widest mb-4">
-              <span className="text-sm font-medium rounded-full bg-primary-900 text-white py-1 px-2 mb-3 inline-block">
+            <h3 className="uppercase pt-14  tracking-widest mb-4">
+              <span ref={el => startRef = el} className="text-sm font-medium rounded-full bg-primary-900 text-white py-1 px-2 mb-3 inline-block">
                 Start Your
               </span>
-              <span className="text-primary-500 text-6xl md:text-8xl block font-black font-alfa">
+              <span ref={el => codeRef = el} className="text-primary-500 text-6xl md:text-8xl block font-black font-alfa">
                 Coding Journey
               </span>
               with our Comprehensive online professional training.
@@ -36,7 +76,7 @@ function Banner() {
                 />
               </svg>
             </button>
-            <p className="md:text-base text-lg text-slate-500 mt-8">
+            <p ref={el => descRef = el} className="md:text-base text-lg text-slate-500 mt-8">
               If you're interested in learning to code, you've come to the right
               place. Our tutorial is designed to provide you with the knowledge
               and skills you need to become a proficient coder in no time.
@@ -44,7 +84,7 @@ function Banner() {
               own app, or simply learn a new skill, we've got you covered.
             </p>
           </div>
-          <div className="max-w-sm md:max-w-xl order-1 lg:order-2">
+          <div ref={el => imgRef = el} className="max-w-sm md:max-w-xl order-1 lg:order-2">
             <img
               className="animate-jumping"
               src="/IndexImage.svg"
@@ -57,7 +97,7 @@ function Banner() {
       <img className="absolute bottom-10 -z-50" src={grid} />
       <img className="absolute top-10 -z-50 right-0" src={grid} />
       <img className="absolute bottom-10 -z-50 right-0" src={grid} />
-    </header>
+    </div>
   );
 }
 
