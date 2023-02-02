@@ -33,7 +33,7 @@ function Offer() {
             <Course
               title="HTML & CSS"
               subtitle="8 Weeks"
-              level={2}
+              level={1}
               status="open"
               price="$850.00"
               description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
