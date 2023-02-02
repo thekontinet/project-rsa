@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FaAward, FaCheck, FaCheckCircle, FaClock } from "react-icons/fa";
 import { AiFillCloseCircle } from "react-icons/ai";
-import OfferBadge from "./OfferBadge.jsx";
 import classNames from "classnames";
 
 function Course({
