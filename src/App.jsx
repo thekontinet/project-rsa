@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Routes, Route } from 'react-router-dom'
+import FormLayout from "./pages/FormLayout";
 import Home from "./pages/Home";
-import MultistepForm from "./pages/MultistepForm";
+
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/form" element={<MultistepForm/>}/>
+        <Route path="/course-application" element={<FormLayout/>}/>
       </Routes>
     </>
   );

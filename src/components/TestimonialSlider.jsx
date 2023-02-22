@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 
-function TestimonialSlider() {
-    const [active, setActive] = useState(0)
+function TestimonialSlider({currentActive, setactive}) {
+    // const [active, setActive] = useState(currentActive)
     const testimonies = [{
         title: 'I had a great experience',
         tags: ['html', 'css', 'Javascript'],
@@ -21,9 +21,9 @@ function TestimonialSlider() {
     const lastIndex = testimonies.length - 1
 
 
-    const Next = () => active >= lastIndex ? setActive(0) : setActive(active + 1)
+    const Next = () => currentActive >= lastIndex ? setactive(0) : setactive(currentActive + 1)
 
-    const Prev = () => active <= 0 ? setActive(lastIndex) : setActive(active - 1);
+    const Prev = () => currentActive <= 0 ? setactive(lastIndex) : setactive(currentActive - 1);
 
   return (
     <div className='w-full'>
@@ -32,7 +32,7 @@ function TestimonialSlider() {
             <button onClick={Next} className='rounded-full shadow cursor-pointer p-2 hover:bg-slate-50'><FaAngleRight className='w-7 h-7'/></button>
         </div>
        {testimonies.map(({desc, tags, title}, index) => (
-        <div key={index} className={`${active == index ? '' : 'hidden'}`}>
+        <div key={index} className={`${currentActive == index ? '' : 'hidden'}`}>
         <h3>{title}</h3>
         <div className='my-2 flex gap-4 items-center'>
         {tags.map(tag => (

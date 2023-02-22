@@ -20,7 +20,7 @@ function Course({
     closed: <AiFillCloseCircle className="w-3 h-3" />,
   };
   return (
-    <div className="bg-white rounded-lg overflow-hidden">
+    <div className="bg-white z-10 transition-all duration-500 ease-in-out hover:shadow hover:-translate-y-2 rounded-lg overflow-hidden">
       <img
         className="w-full h-52 object-cover"
         src={imageURL ?? "/offer.svg"}
