@@ -29,8 +29,7 @@ function Banner({id}) {
       gsap.from(descRef, {
         delay:1.5,
         opacity: 0,
-        y:10,
-        skewY:-10,
+        skewY:-5,
         duration:1,
         ease: Power4.easeInOut
       });
@@ -48,10 +47,10 @@ function Banner({id}) {
   }, [startRef, codeRef, descRef, imgRef])
   return (
     <div ref={id} className="relative">
-      <div className="w-full px-7 md:px-32 py-5">
-        <div className="md:grid grid-cols-2">
+      <div className="w-full px-5 md:px-32 pb-5">
+        <div className="grid lg:grid-cols-2">
           <div className="">
-            <h3 className="uppercase pt-14  tracking-widest mb-4">
+            <h3 className="uppercase mt-10 md:mt-14  tracking-widest mb-4">
               <span ref={el => startRef = el} className="text-sm font-medium rounded-full bg-primary-900 text-white py-1 px-2 mb-3 inline-block">
                 Start Your
               </span>

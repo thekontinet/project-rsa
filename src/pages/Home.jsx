@@ -6,8 +6,12 @@ import Banner from "../components/Banner";
 import Offer from "../components/Offer";
 import Testimonial from "../components/Testimonial";
 import TopNav from "../components/TopNav";
+import SideBar from "../components/SideBar";
+import { useInView } from 'react-intersection-observer';
+
 
 function Home() {
+  const [toggle, setToggle] = useState(false);
   const offerSection = useRef(null);
   const homeSection = useRef(null);
   const testimonialSection = useRef(null);
@@ -23,9 +27,19 @@ function Home() {
   ];
 
   return (
-    <div className="h-screen w-screen overflow-x-hidden scroll-smooth">
+    <div className="scroll-smooth">
       <header>
-        <TopNav sectionTags={sectionTags} />
+        <TopNav
+          sectionTags={sectionTags}
+          toggle={toggle}
+          setToggle={() => setToggle(!toggle)}
+        />
+        <SideBar
+          sectionTags={sectionTags}
+          closebar={() => setToggle(false)}
+          toggle={toggle}
+          setToggle={() => setToggle(!toggle)}
+        />
         <Banner id={homeSection} />
       </header>
       <main>

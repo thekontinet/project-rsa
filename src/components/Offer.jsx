@@ -1,36 +1,35 @@
 import React, { useEffect, useRef } from "react";
 import Arrow from "../assets/images/Arrow.png";
 import Course from "./Course.jsx";
-import { gsap, Power3 } from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
-gsap.registerPlugin(ScrollTrigger);
 function Offer({id}) {
-  let subtitle = useRef(null)
-  
-  // useEffect(() => {
-  //    const ctx = gsap.context(() => {
-  //     const Ref = subtitle.current
-  //     gsap.from(Ref, {
-  //       opacity: 0,
-  //       y: -10,
-  //       skewX:-10,
-  //       duration: 1,
-  //       ease: Power3.easeInOut,
-  //       scrollTrigger: Ref
-  //        })
-  //    })
+  gsap.registerPlugin(ScrollTrigger);
+  const subtitle = useRef(null)
+   
+   useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(subtitle.current, {
+        opacity: 0,
+        y: -15,
+        skewX:-10,
+        duration: 1,
+        ease: 'power3.easeIn',
+        scrollTrigger: subtitle.current
+         })
+    });
 
-  //    return () => ctx.revert()
-  // }, []);
+    return () => ctx.revert()
+  }, [subtitle]);
   return (
     <section
       ref={id}
-      className="w-full relative bg-slate-50 px-7 py-20 md:px-16 text-center"
+      className="w-full relative bg-slate-50 px-7 py-10 md:px-16 text-center"
     >
       <div className="relative">
-        <h1 ref={el => subtitle = el} className="font-bold font-alfa text-primary-500 uppercase tracking-widest">
+        <h1 ref={subtitle} className="font-bold font-alfa text-primary-500 uppercase tracking-widest">
           what we offer
         </h1>
         <p className="max-w-3xl mb-8 text-sm mx-auto mt-5">
@@ -40,7 +39,7 @@ function Offer({id}) {
           experience under your belt.
         </p>
         <div>
-          <div className="grid md:grid-cols-3 justify-center items-center gap-10">
+          <div className="grid lg:grid-cols-3 justify-center items-center gap-10">
             <Course
               title="HTML & CSS"
               subtitle="8 Weeks"
@@ -54,7 +53,7 @@ function Offer({id}) {
             <Course
               title="HTML & CSS"
               subtitle="8 Weeks"
-              level={2}
+              level={1}
               status="open"
               price="$850.00"
               description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
